@@ -188,3 +188,98 @@ body {
 	height: 100%;
 	object-fit: cover;
 }
+.main .cardBox {
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-gap: 30px;
+}
+.main .cardBox .card {
+	position: relative;
+	background: var(--white);
+	padding: 30px;
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.main .cardBox .card:hover {
+	background: var(--blue);
+}
+.main .cardBox .card .numbers {
+	position: relative;
+	font-weight: 500;
+	font-size: 2.5em;
+	color: var(--blue);
+}
+.main .cardBox .card .cardName {
+	color: var(--black2);
+	font-size: 1.1em;
+	margin-top: 5px;
+}
+.main .cardBox .card .iconBx {
+	font-size: 3.5em;
+	color: var(--black2);
+}
+.main .cardBox .card:hover .numbers,
+.main .cardBox .card:hover .cardName,
+.main .cardBox .card:hover .iconBx {
+	color: var(--white);
+}
+.main .details {
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 30px;
+	/* margin-top: 10px */
+}
+.main .details .recentsOrders {
+	position: relative;
+	display: grid;
+	min-height: 500px;
+	background: var(--white);
+	padding: 20px;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+	border-radius: 20px;
+}
+.main .details .recentsOrders .cardHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.main .details .recentsOrders .cardHeader h2 {
+	font-weight: 600;
+	color:var(--blue)
+}
+.main .details .recentsOrders .cardHeader .btn {
+	position: relative;
+	padding: 5px 10px;
+	background: var(--blue);
+	text-decoration: none;
+	color: var(--white);
+	border-radius: 6px;
+}
+.main .details .recentsOrders table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+.main .details .recentsOrders table thead tr td {
+	font-weight: 600;
+}
+.main .details .recentsOrders table tr {
+	color: var(--black1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.main .details .recentsOrders table tr :last-child {
+	border-bottom: none;
+}
+.main .details .recentsOrders table tbody tr:hover {
+	background: var(--blue);
+	color: var(--white);
+}
