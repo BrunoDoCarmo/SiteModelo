@@ -85,9 +85,7 @@ body {
 	text-align: start;
 	white-space: nowrap;
 }
-
 /* curve outlside */
-
 .navigation ul li:hover a::before,
 .navigation ul li.hovered a::before{
 	content: '';
@@ -114,7 +112,6 @@ body {
 	box-shadow: 35px -35px 0 10px var(--white);
 	pointer-events: none;
 }
-
 /* main */
 .main {
 	position: absolute;
@@ -138,7 +135,7 @@ body {
 }
 .main .topbar .toggle {
 	position: relative;
-	top: 0; /*obs*/
+	top: 0;
 	width: 60px;
 	height: 60px;
 	display: flex;
@@ -236,7 +233,6 @@ body {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	grid-gap: 30px;
-	/* margin-top: 10px */
 }
 .main .details .recentOrders {
 	position: relative;
@@ -247,7 +243,8 @@ body {
 	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 	border-radius: 20px;
 }
-.main .details .recentOrders .cardHeader {
+.main .details .recentOrders .cardHeader,
+.main .details .recentCustomers .cardHeader {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -363,12 +360,14 @@ body {
 }
 
 /* now, make it responsive desing*/
-@media (max-width: 991px) {
+@media (max-width: 991px) {	
 	.navigation {
-		left: -300px;
+		width: 100%;
+		left: -100%;
+		z-index: 1000;
 	}
 	.navigation.active {
-		width: 300px;
+		width: 100%;
 		left: 0;
 	}
 	.main {
@@ -378,14 +377,24 @@ body {
 	.main.active {
 		left: 300px;
 	}
+	.main .topbar {
+		z-index: 10001;
+	}
+	.main.active .topbar .toggle {
+		position: fixed;
+		z-index: 1000;
+		right: 0;
+		left: initial;
+		color: var(--white);
+	}
+	.main .topbar .user {
+		min-width: 40px;
+	}
 	.main .cardBox {
 		grid-template-columns: repeat(2,1fr);
 	}
-	.main .cardBox .card {
-		padding: 20px;
-	}
 	.main .cardBox .card .numbers {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	.main .cardBox .card .iconBx {
 		font-size: 2.5em;
@@ -401,4 +410,14 @@ body {
 	.main .details .recentOrders table tr td .status.inprogress {
 		white-space: nowrap;
 	}
+}
+@media (max-width: 480px) {
+	.main .cardBox {
+		grid-template-columns: repeat(1,1fr);
+	}
+	.main .details .recentOrders .cardHeader H2,
+	.main .details .recentCustomers .cardHeader H2 {
+		font-size: 20px;
+	}
+
 }
