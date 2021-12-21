@@ -252,9 +252,10 @@ body {
 	justify-content: space-between;
 	align-items: flex-start;
 }
-.main .details .recentsOrders .cardHeader h2 {
+.main .details .recentsOrders .cardHeader h2,
+.main .details .recentsCustomers .cardHeader h2 {
 	font-weight: 600;
-	color:var(--blue)
+	color:var(--blue);
 }
 .main .details .recentsOrders .cardHeader .btn {
 	position: relative;
@@ -281,5 +282,39 @@ body {
 }
 .main .details .recentsOrders table tbody tr:hover {
 	background: var(--blue);
+	color: var(--white);
+}
+.main .details .recentsOrders table tr td {
+	padding: 10px;
+}
+.main .details .recentsOrders table tr td:last-child {
+	text-align: end;
+}
+.main .details .recentsOrders table tr td:nth-child(2) {
+	text-align: end;
+}
+.main .details .recentsOrders table tr td:nth-child(3) {
+	text-align: center;
+}
+.main .details .recentsOrders table tr td .status {
+	padding: 2px 4px;
+	border-radius: 4px;
+	font-size: 15px;
+	font-weight: 500;
+}
+.main .details .recentsOrders table tr td .status.delivered {
+	background: #8de02c;
+	color: var(--white);
+}
+.main .details .recentsOrders table tr td .status.pending {
+	background: #f9ca3f;
+	color: var(--white);
+}
+.main .details .recentsOrders table tr td .status.return {
+	background: #f00;
+	color: var(--white);
+}
+.main .details .recentsOrders table tr td .status.inprogress {
+	background: #1795ce;
 	color: var(--white);
 }
