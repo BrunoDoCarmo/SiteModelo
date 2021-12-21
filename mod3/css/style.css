@@ -238,7 +238,7 @@ body {
 	grid-gap: 30px;
 	/* margin-top: 10px */
 }
-.main .details .recentsOrders {
+.main .details .recentOrders {
 	position: relative;
 	display: grid;
 	min-height: 500px;
@@ -247,17 +247,17 @@ body {
 	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 	border-radius: 20px;
 }
-.main .details .recentsOrders .cardHeader {
+.main .details .recentOrders .cardHeader {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
 }
-.main .details .recentsOrders .cardHeader h2,
-.main .details .recentsCustomers .cardHeader h2 {
+.main .details .recentOrders .cardHeader h2,
+.main .details .recentCustomers .cardHeader h2 {
 	font-weight: 600;
 	color:var(--blue);
 }
-.main .details .recentsOrders .cardHeader .btn {
+.main .details .recentOrders .cardHeader .btn {
 	position: relative;
 	padding: 5px 10px;
 	background: var(--blue);
@@ -265,56 +265,131 @@ body {
 	color: var(--white);
 	border-radius: 6px;
 }
-.main .details .recentsOrders table {
+.main .details .recentOrders table {
 	width: 100%;
 	border-collapse: collapse;
 	margin-top: 10px;
 }
-.main .details .recentsOrders table thead tr td {
+.main .details .recentOrders table thead tr td {
 	font-weight: 600;
 }
-.main .details .recentsOrders table tr {
+.main .details .recentOrders table tr {
 	color: var(--black1);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.main .details .recentsOrders table tr :last-child {
+.main .details .recentOrders table tr :last-child {
 	border-bottom: none;
 }
-.main .details .recentsOrders table tbody tr:hover {
+.main .details .recentOrders table tbody tr:hover {
 	background: var(--blue);
 	color: var(--white);
 }
-.main .details .recentsOrders table tr td {
+.main .details .recentOrders table tr td {
 	padding: 10px;
 }
-.main .details .recentsOrders table tr td:last-child {
+.main .details .recentOrders table tr td:last-child {
 	text-align: end;
 }
-.main .details .recentsOrders table tr td:nth-child(2) {
+.main .details .recentOrders table tr td:nth-child(2) {
 	text-align: end;
 }
-.main .details .recentsOrders table tr td:nth-child(3) {
+.main .details .recentOrders table tr td:nth-child(3) {
 	text-align: center;
 }
-.main .details .recentsOrders table tr td .status {
+.main .details .recentOrders table tr td .status {
 	padding: 2px 4px;
 	border-radius: 4px;
 	font-size: 15px;
 	font-weight: 500;
 }
-.main .details .recentsOrders table tr td .status.delivered {
+.main .details .recentOrders table tr td .status.delivered {
 	background: #8de02c;
 	color: var(--white);
 }
-.main .details .recentsOrders table tr td .status.pending {
+.main .details .recentOrders table tr td .status.pending {
 	background: #f9ca3f;
 	color: var(--white);
 }
-.main .details .recentsOrders table tr td .status.return {
+.main .details .recentOrders table tr td .status.return {
 	background: #f00;
 	color: var(--white);
 }
-.main .details .recentsOrders table tr td .status.inprogress {
+.main .details .recentOrders table tr td .status.inprogress {
 	background: #1795ce;
 	color: var(--white);
+}
+.main .details .recentCustomers {
+	position: relative;
+	display: grid;
+	min-height: 500px;
+	padding: 20px;
+	background: var(--white);
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+	border-radius: 20px;
+}
+.main .details .recentCustomers .imgBx {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.main .details .recentCustomers .imgBx img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.main .details .recentCustomers table tr td {
+	padding: 12px 10px;
+}
+.main .details .recentCustomers table tr td h4 {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.2em;
+}
+.main .details .recentCustomers table tr td h4 span {
+	font-size: 14px;
+	color: var(--black2);
+}
+.main .details .recentCustomers table tr:hover {
+	background: var(--blue);
+	color: var(--white);
+}
+.main .details .recentCustomers table tr:hover td h4 span {
+	color: var(--white);
+}
+
+/* now, make it responsive desing*/
+@media (max-width: 991px) {
+	.navigation {
+		left: -300px;
+	}
+	.navigation.active {
+		width: 300px;
+		left: 0;
+	}
+	.main {
+		width: 100%;
+		left: 0;
+	}
+	.main.active {
+		left: 300px;
+	}
+	.main .cardBox {
+		grid-template-columns: repeat(2,1fr);
+	}
+}
+@media (max-width: 768px) {
+	.main .details {
+		grid-template-columns: repeat(1,1fr);
+	}
+	.main .details .recentOrders {
+		overflow-x: auto;
+	}
+	.main .details .recentOrders table tr td .status.inprogress {
+		white-space: nowrap;
+	}
 }
