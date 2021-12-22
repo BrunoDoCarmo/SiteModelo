@@ -133,15 +133,9 @@ body {
 	bottom: -50px;
 	box-shadow: 35px -35px 0 10px var(--white);
 }
-/* .navigation .checked {
+.checkbox {
 	position: absolute;
 	bottom: 5px;
-}
-.navigation .checked .check-input{
-	width: 50px;
-	height: 10px;
-} */
-.checkbox {
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
