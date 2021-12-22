@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family+Ubuntu:wgth@300;400;500;700&display=swap');
 :root {
 	--blue: #287bff;
 	--white: #fff;
@@ -8,172 +8,268 @@
 	--black3: #eee;
 }
 * {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  outline: none;
-  border: none;
-  text-decoration: none;
-  text-transform: capitalize;
-  -webkit-transition: .2s linear;
-  transition: .2s linear;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Ubuntu', sans-serif;
 }
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+:root {
+	--blue: #287bff;
+	--white: #fff;
+	--grey: #f5f5f5;
+	--black1: #222;
+	--black2: #999;
 }
-html::-webkit-scrollbar {
-  width: 1rem;
+body {
+	min-height: 100vh;
+	overflow: hidden;
 }
-html::-webkit-scrollbar-track {
-  background: var(--white)
+.container {
+	position: relative;
+	width: 100%;
 }
-html::-webkit-scrollbar-thumb {
-  background: var(--blue);
+.navigation {
+	position: fixed;
+	width: 55px;
+	height: 100%;
+	background: var(--blue);
+	border-left: 5px solid var(--blue);
+	transition: 0.5s;
+	overflow: hidden;
 }
-section {
-  padding: 5rem 9%;
+.navigation.active {
+	width: 300px;
 }
-.btn {
-  margin-top: 1rem;
-  display: inline-block;
-  border: 0.2rem solid var(--black1);
-  color: var(--black1);
-  cursor: pointer;
-  background: none;
-  font-size: 1.7rem;
-  padding: 1rem 3rem;
+.navigation ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
-.btn:hover {
-  background: var(--black1);
-  color: var(--white);
+.navigation ul li {
+	position: relative;
+	width: 100%;
+	list-style: none;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
 }
-.heading {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 4rem;
-  color: var(--black1);
+.navigation ul li:hover,
+.navigation ul li.hovered {
+	background: var(--white);
 }
-.header {
-  width: 5px;
-  height: 100vh;
-  right: 0;
-  padding: 2rem 3%;
-  z-index: 1000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-          justify-content: center;
-  background: var(--blue);
+.navigation ul li:nth-child(1) {
+	margin-bottom: 40px;
+	pointer-events: none;
 }
-.header .logo {
-  margin-right: auto;
-  font-size: 2.5rem;
-  color: var(--black1);
-  font-weight: bolder;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.navigation ul li a {
+	position: relative;
+	display: block;
+	width: 100%;
+	display: flex;
+	text-decoration: none;
+	color: var(--white);
 }
-/* .header .logo i {
-  color: #219150;
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+	color: var(--blue);
+}
+.navigation ul li a .icon {
+	position: relative;
+	display: block;
+	min-width: 60px;
+	height: 60px;
+	z-index: 1;
+	margin-left: -10px;
+	margin-top: 7px;
+	line-height: 70px;
+	text-align: center;
+}
+.navigation ul li a .icon ion-icon {
+	font-size: 1.75em;
+}
+.navigation ul li a .title {
+	position: relative;
+	display: block;
+	padding: 0 10px;
+	height: 60px;
+	line-height: 60px;
+	text-align: start;
+	white-space: nowrap;
+}
+/* curve outlside */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+	content: '';
+	position: absolute;
+	right: 0;
+	top: -50px;
+	width: 50px;
+	height: 50px;
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 30px 35px 0 7px var(--white);
+	pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: -50px;
+	width: 50px;
+	height: 50px;
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 30px -35px 0 7px var(--white);
+	pointer-events: none;
+}
+.navigation.active ul li:hover a::before,
+.navigation.active ul li.hovered a::before{
+	top: -50px;
+	box-shadow: 35px 35px 0 10px var(--white);
+}
+.navigation.active ul li:hover a::after,
+.navigation.active ul li.hovered a::after{
+	bottom: -50px;
+	box-shadow: 35px -35px 0 10px var(--white);
+}
+/* .navigation .checked {
+	position: absolute;
+	bottom: 5px;
+}
+.navigation .checked .check-input{
+	width: 50px;
+	height: 10px;
 } */
-.header .navbar a {
-  margin-left: 2rem;
-  font-size: 1.7rem;
-  color: var(--blue);
-}
-
-.header .navbar a:hover {
-  color: var(--black1);
-}
-
-.header .navbar #nav-close {
-  font-size: 5rem;
+.checkbox {
+  display: inline-block;
+  vertical-align: middle;
   cursor: pointer;
-  color: var(--black1);
-  display: none;
 }
-.header .icons a,
-.header .icons div {
-  font-size: 2.5rem;
-  cursor: pointer;
-  color: var(--black1);
+.checkbox input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 15px;
+  height: 5px;
 }
-.header .navbar {
-  position: fixed;
-  top: 0;
-  left: -110%;
-  background: var(--white);
-  z-index: 10000;
-  width: 35%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.checkbox label {
+  position: relative;
+  padding-left: 2.2em;
+  display: inline-block;
 }
-.header .navbar.active {
+.checkbox label::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.5em;
+  width: 1.5em;
+  background: #FFF;
+  margin-right: 0.5em;
+  border: 1px solid #999;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 50%;
   left: 0;
-  -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
-          box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+  transform: translate(0, -50%);
 }
-.header .navbar a {
-  margin: 1rem 0;
-  font-size: 3rem;
-}
-.header .navbar #nav-close {
-  display: block;
+.checkbox label::after {
+  content: "\2713";
   position: absolute;
-  top: 1rem;
-  right: 2rem;
+  top: 50%;
+  left: 0.75em;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  color: #FFF;
+  opacity: 0;
+  transition: all 0.2s ease;
 }
-.header .navbar .icons-social {
-  position: absolute;
-  bottom: 1rem;
-  display: flex;
+.checkbox label:focus::before, .checkbox label:hover::before {
+  background: #DDD;
 }
-.header .navbar .icons-social a {
-  margin-left: 1.5rem;
-  font-size: 3rem;
+.checkbox input:checked + label::before {
+  background: #ff7212;
+  border-color: #ff7212;
 }
-@media (max-width: 768px) {
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 9%;
-    right: 0;
-    padding: 2rem 9%;
-    z-index: 1000;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .header .navbar {
-    width: 100%;
-  }
+.checkbox input:checked + label::after {
+  opacity: 1;
+}
+
+/* main */
+.main {
+	position: absolute;
+	width: calc(100% - 55px);
+	left: 55px;
+	min-height: 100vh;
+	background: var(--white);
+	transition: 0.5S;
+}
+.main.active {	
+	width: calc(100% - 300px);
+	left: 300px;
+}
+.main .topbar {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px;
+}
+.main .topbar .toggle {
+	position: relative;
+	top: 0;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.5em;
+	cursor: pointer;
+}
+.main .topbar .search {
+	position: relative;
+	width: 400px;
+	margin: 0 10px;
+}
+.main .topbar .search label {
+	position: relative;
+	width: 100%;
+}
+.main .topbar .search input {
+	width: 100%;
+	height: 40px;
+	border-radius: 40px;
+	padding: 5px 20px;
+	padding-left: 35px;
+	font-size: 18px;
+	outline: none;
+	border: 1px solid var(--black2);
+}
+.main .topbar .search ion-icon {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	font-size: 1.2em;
+}
+.main .topbar .user {
+	position: relative;
+	min-width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+}
+.main .topbar .user img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }

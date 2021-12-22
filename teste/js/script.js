@@ -1,26 +1,19 @@
-let navbar = document.querySelector('.header .navbar');
+//MenuToggle
+let toggle = document.querySelector('.toggle');
+let navigation = document.querySelector('.navigation');
+let main = document.querySelector('.main');
 
-document.querySelector('#menu-btn').onclick = () =>{
-    navbar.classList.add('active');
+toggle.onclick = function(){
+    navigation.classList.toggle('active');
+    main.classList.toggle('active');
 }
 
-document.querySelector('#nav-close').onclick = () =>{
-    navbar.classList.remove('active');
+//add hovered class in selected list item
+let list = document.querySelectorAll('.navigation li');
+function activeLink(){
+    list.forEach((item) =>
+    item.classList.remove('hovered'));
+    this.classList.add('hovered');
 }
-window.onscroll = () =>{
-  navbar.classList.remove('active');
-
-  if(window.scrollY > 0){
-      document.querySelector('.header').classList.add('active');
-  }else{
-      document.querySelector('.header').classList.remove('active');
-  }
-};
-
-window.onload = () =>{
-  if(window.scrollY > 0){
-      document.querySelector('.header').classList.add('active');
-  }else{
-      document.querySelector('.header').classList.remove('active');
-  }
-};
+list.forEach((item) =>
+item.addEventListener('mouseover', activeLink))
