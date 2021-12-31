@@ -1,19 +1,20 @@
-//MenuToggle
-let toggle = document.querySelector('.toggle');
-let navigation = document.querySelector('.navigation');
-let main = document.querySelector('.main');
-
-toggle.onclick = function(){
-    navigation.classList.toggle('active');
-    main.classList.toggle('active');
+let menutoggle = document.querySelector('.toggle');
+menutoggle.onclick = function() {
+	menutoggle.classList.toggle('active')
 }
+const btn_toggle = document.querySelector('.btn-toggle')
+const sidebar = document.querySelector('.sidebar')
+const logo = document.querySelector('.logo')
+const wrapper = document.querySelector('.wrapper')
 
-//add hovered class in selected list item
-let list = document.querySelectorAll('.navigation li');
-function activeLink(){
-    list.forEach((item) =>
-    item.classList.remove('hovered'));
-    this.classList.add('hovered');
-}
-list.forEach((item) =>
-item.addEventListener('mouseover', activeLink))
+btn_toggle.addEventListener("click", () => {
+	sidebar.classList.toggle("active");
+	if(sidebar.classList.contains('active')) {
+		logo.setAttribute("style", "display:flex");
+		wrapper.setAttribute("style", "left:240px;width: calc(100% - 240px)");
+		return
+	}
+	logo.setAttribute("style", "display:none");
+	wrapper.setAttribute("style", "left:85px;width: calc(100% - 85px)");
+	
+})

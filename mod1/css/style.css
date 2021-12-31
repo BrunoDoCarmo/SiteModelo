@@ -808,7 +808,7 @@ section {
     left: -110%;
     background: #fff;
     z-index: 10000;
-    width: 100%;
+    width: 35rem;
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
