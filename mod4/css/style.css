@@ -21,14 +21,13 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background: RED;
+	border-radius: 10px;
 }
 .card img {
 	height: 100%;
-	width: 90%;
+	width: 100%;
 	border-radius: 10px;
 }
-
 .content {
 	position: absolute;
 	height: 100%;
