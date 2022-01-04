@@ -116,6 +116,10 @@ var swiper = new Swiper(".clients-slider", {
 	loop: true,
 	grabCursor: true,
 	spaceBetween: 20,
+	autoplay: {
+			delay: 2000,
+			disableOnInteraction: false,
+	},
 	breakpoints: {
 		0: {
 			slidesPerView: 1,
