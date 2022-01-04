@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600&display=swap");
+* {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+:root {
+	--black1: #000;
+	--black2: #c6c6c6;
+	--scrollbar-thumb: #287bff;
+	--btn: #287bff;
+	--navbar: #daac00;
+	--color: #daac00;
+	--background: #fcc302;
+	--white: #fff;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+html::-webkit-scrollbar-track {
+	background: var(--white);
+}
+html::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-thumb);
+  border-radius: 5rem;
+}
+section {
+	padding: 5rem 9%;
+}
+.btn {
+	margin-top: 1rem;
+	display: inline-block;
+	border: 0.2rem solid var(--black1);
+	color: var(--black1);
+	cursor: pointer;
+	background: none;
+	font-size: 1.7rem;
+	padding: 1rem 3rem;
+	border-radius: 1rem;
+}
+.btn:hover {
+	background: var(--btn);
+	color: var(--white);
+}
+.heading {
+	text-align: center;
+	margin-bottom: 2.5rem;
+	font-size: 4rem;
+	color: var(--black1);
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--navbar);
+  padding: 2rem 9%;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+.header .logo {
+  position: absolute;
+  top: .7rem;
+  left: 48.5%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.header .logo img {
+  width: 15rem;
+}
+.header #nav-open {
+  display: none;
+}
+
+.header .navbar #nav-close {
+  font-size: 5rem;
+  cursor: pointer;
+  color: #10221b;
+  display: none;
+}
+.header .navbar {
+  margin-top: 4rem;
+  margin-bottom: -2rem;
+}
+.header .navbar a {
+  color: var(--white);
+  font-size: 2rem;
+  margin: 0 2rem;
+}
+.header .navbar .icons-social{
+  display: none;
+}
+.header .icons {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--white);
+}
+.header .icons:hover {
+  color: var(--black1);
+}
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    gap: 2rem;
+  }
+  .header .logo {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    left: 3rem;
+  }
+  .header #nav-open {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+    left: -110%;
+    background: var(--navbar);
+    z-index: 10000;
+    width: 35rem;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .navbar.active {
+    left: 0;
+    -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+  }
+  .header .navbar #nav-close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    color: var(--white);
+  }
+  .header .navbar a {
+    margin: 1rem 0;
+    font-size: 3rem;
+    color: var(--white);
+  }
+  .header .navbar .icons-social {
+    position: absolute;
+    bottom: 2rem;
+		display: flex;
+		align-items: flex-end;
+  }
+  .header .navbar .icons-social a {
+		padding: 0 1.5rem;
+    font-size: 4rem;
+		color: var(--white);
+  }
+  .header .navbar #nav-close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+  }
+  .header .navbar a {
+    font-size: 3rem;
+  }
+}
+@media (max-width:500px) {
+  .header .navbar {
+    width: 100%;
+  }
+  .header .navbar a {
+    font-size: 6rem;
+  }
+}
