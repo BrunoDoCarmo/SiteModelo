@@ -125,7 +125,7 @@ section {
 }
 .header .icons-social {
 	position: absolute;
-	top: .5rem;
+	top: 1rem;
 }
 .header .icons-social a {
 	margin-left: 1rem;
@@ -134,7 +134,7 @@ section {
 }
 .header .navbar,
 .header .icons {
-	margin-top: 2rem;
+	margin-top: 3rem;
 }
 .home {
 	background: var(--background);
