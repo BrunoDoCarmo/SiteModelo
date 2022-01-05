@@ -15,12 +15,16 @@
 :root {
 	--black1: #000;
 	--black2: #c6c6c6;
+	--black3: #eee;
 	--scrollbar-thumb: #287bff;
 	--btn: #287bff;
-	--navbar: #daac00;
+	--navbar: #287bff;
 	--color: #daac00;
 	--background: #fcc302;
 	--white: #fff;
+  --home-background-image: url('../img/home/principal.jpg');
+  --background-description: url('../img/background-description.jpg');
+  --about-image: url('../img/Contact/pexels-olia-danilevich-5313361.jpg');
 }
 html {
   font-size: 62.5%;
@@ -29,14 +33,14 @@ html {
   overflow-x: hidden;
 }
 html::-webkit-scrollbar {
-  width: 1rem;
+  width: .5rem;
 }
 html::-webkit-scrollbar-track {
 	background: var(--white);
 }
 html::-webkit-scrollbar-thumb {
 	background: var(--scrollbar-thumb);
-  border-radius: 5rem;
+  border-radius: .25rem;
 }
 section {
 	padding: 5rem 9%;
@@ -67,7 +71,6 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  background: var(--navbar);
   padding: 2rem 9%;
   z-index: 1000;
   display: -webkit-box;
@@ -80,6 +83,11 @@ section {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 1rem;
+}
+.header.active {
+  background: var(--navbar);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 .header .logo {
   position: absolute;
@@ -98,7 +106,7 @@ section {
 .header .navbar #nav-close {
   font-size: 5rem;
   cursor: pointer;
-  color: #10221b;
+  color: var(--black1);
   display: none;
 }
 .header .navbar {
@@ -120,6 +128,229 @@ section {
 }
 .header .icons:hover {
   color: var(--black1);
+}
+.home {
+  padding: 0;
+}
+.home .box {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: var(--home-background-image) no-repeat;
+  background-size: cover !important;
+  background-position: center !important;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 2rem 9%;
+}
+.home .box.second {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.home .box .content {
+  width: 100%;
+  text-align: center;
+}
+.home .box .content span {
+  font-size: 4rem;
+  color: var(--font-color);
+}
+.home .box .content p {
+  color: var(--white);
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-shadow: -1px -1px 0px var(--black), -1px 1px 0px var(--black),
+    1px -1px 0px var(--black), 1px 0px 0px var(--black);
+}
+.clients {
+  position: relative;
+  max-width: 100%;
+  padding: 1rem;
+}
+.clients .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 200px;
+  margin: 0 20px;
+}
+.clients .card .content {
+  margin-bottom: -1rem;
+  position: relative;
+  z-index: 2;
+}
+.clients .card .content .imgBx {
+  margin: 0 auto 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+.clients .card .content .imgBx img {
+  width: 100%;
+}
+.clients .swiper-3d .swiper-slide-shadow-left,
+.clients .swiper-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+.slide {
+  position: relative;
+  max-width: 100%;
+}
+.slide .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 350px;
+  min-height: 350px;
+  margin: 0 20px;
+  background: var(--white);
+}
+.slide .swiper-3d .swiper-slide-shadow-left,
+.slide .swiper-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+.slide .card {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--black2);
+  padding: 60px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+.slide .card .layer {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#30a9f4, #e91ee3);
+  z-index: 1;
+  transition: 0.5s;
+}
+.slide .card:hover .layer {
+  top: 0;
+}
+.slide .card .content {
+  position: relative;
+  z-index: 2;
+}
+.slide .card .content p {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+.slide .card .content .imgBx {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--white);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.slide .card .content h2 {
+  font-size: 18px;
+  color: var(--white);
+}
+.slide .card .content h2 span {
+  color: #30a9f4;
+  font-size: 14px;
+  transition: 0.5s;
+}
+.slide .card:hover .content h2 span {
+  color: var(--white);
+}
+
+.maps {
+  margin: 0;
+  padding: 0;
+}
+.maps,
+iframe {
+  height: 38rem;
+}
+.maps iframe {
+  position: relative;
+  width: 100%;
+}
+.footer {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url(../img/footer/background.jpg) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/footer/background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.footer .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(36rem, 1fr)) [auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  gap: 1.5rem;
+}
+.footer .box-container .box {
+  width: 95%;
+}
+.footer .box-container .box h3 {
+  font-size: 2rem;
+  padding: 1.5rem 0;
+  color: var(--white);
+}
+.footer .box-container .box img {
+  display: block;
+  left: 0;
+  top: 0;
+  padding: 1.5rem 0;
+  width: 50%;
+  height: auto;
+}
+.footer .box-container .box p {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--white);
+  text-align: justify;
+}
+.footer .box-container .box a {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--white);
+  padding: 1rem 0;
+}
+.footer .box-container .box a i {
+  color: var(--navbar);
+  padding-right: 0.5rem;
+  margin-right: 0.5rem;
+}
+.footer .box-container .box a:hover {
+  color: var(--navbar);
+}
+.footer .box-container .box a:hover i {
+  padding-right: 2rem;
+}
+.footer .credit {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  font-size: 1.5rem;
+  color: var(--white);
 }
 @media (max-width: 991px) {
   html {
