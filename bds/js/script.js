@@ -6,6 +6,14 @@ document.querySelector('#nav-open').onclick = () => {
 document.querySelector('#nav-close').onclick = () => {
   navbar.classList.remove('active');
 }
+let services = document.querySelector('.box-container .box');
+
+document.querySelector('#teste1').onclick = () => {
+  services.classList.add('active');
+}
+document.querySelector('#teste2').onclick = () => {
+  services.classList.remove('active');
+}
 window.onscroll = () => {
   navbar.classList.remove('active');
   if (window.scrollY > 0 ){
