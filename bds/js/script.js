@@ -6,14 +6,6 @@ document.querySelector('#nav-open').onclick = () => {
 document.querySelector('#nav-close').onclick = () => {
   navbar.classList.remove('active');
 }
-let services = document.querySelector('.box-container .box');
-
-document.querySelector('#teste1').onclick = () => {
-  services.classList.add('active');
-}
-document.querySelector('#teste2').onclick = () => {
-  services.classList.remove('active');
-}
 window.onscroll = () => {
   navbar.classList.remove('active');
   if (window.scrollY > 0 ){
@@ -48,20 +40,20 @@ var swiper = new Swiper(".clients-slider", {
 	loop:true,
 });
 
-var swiper = new Swiper(".swiper-container", {
-	effect: "coverflow",
-	grabCursor: true,
-	centeredSlides: true,
-	slidesPerView: "auto",
-	autoplay: {
-		delay: 2000,
-	},
-	coverflowEffect: {
-		rotate: 0,
-		stretch: 0,
-		depth: 0,
-		modifier: 1,
-		slideShadows: true,
-	},
-	loop:true,
-});
+// var swiper = new Swiper(".swiper-container", {
+// 	effect: "coverflow",
+// 	grabCursor: true,
+// 	centeredSlides: true,
+// 	slidesPerView: "auto",
+// 	autoplay: {
+// 		delay: 2000,
+// 	},
+// 	coverflowEffect: {
+// 		rotate: 0,
+// 		stretch: 0,
+// 		depth: 0,
+// 		modifier: 1,
+// 		slideShadows: true,
+// 	},
+// 	loop:true,
+// });
