@@ -57,7 +57,10 @@ var swiper = new Swiper('.swiper-container', {
   },
   loop: true
 })
-let test = document.querySelector('.services .box-container')
-document.querySelector('.test').onclick = () => {
-  test.classList.add('active1')
+let test = document.querySelector('.contact .form .work')
+document.querySelector('#nav-open1').onclick = () => {
+  test.classList.add('active')
+}
+document.querySelector('#nav-close1').onclick = () => {
+  test.classList.remove('active')
 }
