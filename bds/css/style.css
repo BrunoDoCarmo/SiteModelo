@@ -33,7 +33,7 @@ html {
   overflow-x: hidden;
 }
 html::-webkit-scrollbar {
-  width: .5rem;
+  width: 0.5rem;
 }
 html::-webkit-scrollbar-track {
   background: var(--white);
@@ -234,15 +234,15 @@ section {
 .technology .box-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  -ms-grid-columns: (minmax(31rem, 1fr)) [auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
   gap: 1.5rem;
 }
 .technology .box-container .box {
   text-align: center;
   padding: 2rem;
   border: 0.2rem solid #10221b;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background: #fff;
 }
 .technology .box-container .box:hover {
@@ -250,7 +250,7 @@ section {
 }
 .technology .box-container .box:hover img {
   -webkit-filter: invert(1);
-          filter: invert(1);
+  filter: invert(1);
 }
 .technology .box-container .box:hover p {
   color: #fff;
@@ -282,7 +282,7 @@ section {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 .contact .row .contact-info-container {
@@ -301,23 +301,27 @@ section {
   line-height: 5rem;
   font-size: 1.7rem;
   background: var(--btn);
-  color: #fff;
+  color: var(--white);
   border-radius: 50%;
   text-align: center;
   margin-top: -1rem;
 }
 .contact .row .contact-info-container .box h3 {
   font-size: 2rem;
-  color: #263238;
+  color: var(--black1);
   padding-bottom: 1rem;
 }
 .contact .row .contact-info-container .box p {
   font-size: 1.5rem;
-  color: #777;
+  color: var(--black1);
   line-height: 2;
 }
 .contact .row .contact-info-container .share {
   padding-top: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--btn);
 }
 .contact .row .contact-info-container .share a {
   height: 5rem;
@@ -326,8 +330,8 @@ section {
   font-size: 2rem;
   background: var(--black1);
   border-radius: 1rem;
-  color: #fff;
-  margin-right: .1rem;
+  color: var(--white);
+  margin-right: 0.1rem;
   text-align: center;
 }
 .contact .row .contact-info-container .share a:hover {
@@ -335,30 +339,31 @@ section {
 }
 .contact .row form {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 42rem;
-          flex: 1 1 42rem;
+  -ms-flex: 1 1 42rem;
+  flex: 1 1 42rem;
 }
 .contact .row form .inputBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .contact .row form .inputBox input {
   width: 49%;
 }
-.contact .row form .inputBox input, .contact .row form textarea {
-  padding: 1.4rem;
-  background: #f6f6f6;
-  text-transform: none;
-  color: #777;
-  margin: .7rem 0;
-  font-size: 1.6rem;
-  border: 0.1rem solid #999;
+.contact .row form .inputBox input,
+.contact .row form textarea {
+	padding: 1.4rem;
+	background: var(--black3);
+	text-transform: none;
+	color: var(--black1);
+	margin: 0.7rem 0;
+	font-size: 2rem;
+	border: 0.1rem solid var(--black1);
 }
 .contact .row form textarea {
   width: 100%;
@@ -555,6 +560,31 @@ iframe {
   }
   .header .navbar a {
     font-size: 3rem;
+  }
+	.contact .row .contact-info-container .box i {
+		height: 7rem;
+		width: 7rem;
+		line-height: 7rem;
+		font-size: 3rem;
+	}
+	.contact .row .contact-info-container .box h3 {
+		font-size: 2.5rem;
+	}
+	.contact .row .contact-info-container .box p {
+		font-size: 2rem;
+	}
+	.contact .row .contact-info-container .share a {
+		height: 7rem;
+		width: 7rem;
+		line-height: 7rem;
+		font-size: 4rem;
+	}
+  .contact .row form .inputBox input {
+    width: 100%;
+  }
+  .contact .row form .inputBox input,
+  .contact .row form textarea {
+    font-size: 2rem;
   }
 }
 @media (max-width: 500px) {
