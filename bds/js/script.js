@@ -57,10 +57,40 @@ var swiper = new Swiper('.swiper-container', {
   },
   loop: true
 })
-let test = document.querySelector('.contact .form .work')
-document.querySelector('#nav-open1').onclick = () => {
-  test.classList.add('active')
+let test1 = document.querySelector('.contact .form .work')
+document.querySelector('#test-open1').onclick = () => {
+  test1.classList.add('active')
 }
-document.querySelector('#nav-close1').onclick = () => {
-  test.classList.remove('active')
+document.querySelector('#test-close1').onclick = () => {
+	test1.classList.remove('active')
 }
+let test2 = document.querySelector('#test2')
+test2.addEventListener("click", function () {
+	let contact = document.querySelector('.contact .form .work')
+	contact.classList.toggle('active')
+})
+let services1 = document.querySelector('#btn1')
+services1.addEventListener("click", function () {
+	let servicestext1 = document.querySelector('.services .text-services1')
+	servicestext1.classList.toggle('active')
+})
+// let services2 = document.querySelector('#btn2')
+// services2.addEventListener("click", function () {
+// 	let servicestext2 = document.querySelector('.services .text-services1')
+// 	servicestext2.classList.toggle('active')
+// })
+// let services3 = document.querySelector('#btn3')
+// services3.addEventListener("click", function () {
+// 	let servicestext3 = document.querySelector('.services .text-services1')
+// 	servicestext3.classList.toggle('active')
+// })
+// let services4 = document.querySelector('#btn4')
+// services4.addEventListener("click", function () {
+// 	let servicestext4 = document.querySelector('.services .text-services1')
+// 	servicestext4.classList.toggle('active')
+// })
+// let services5 = document.querySelector('#btn5')
+// services5.addEventListener("click", function () {
+// 	let servicestext5 = document.querySelector('.services .text-services1')
+// 	servicestext5.classList.toggle('active')
+// })
