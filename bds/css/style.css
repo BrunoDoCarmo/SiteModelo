@@ -65,6 +65,7 @@ footer {
   margin-bottom: 2.5rem;
   font-size: 4rem;
   color: var(--black1);
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 .header {
   position: fixed;
@@ -162,18 +163,23 @@ footer {
 }
 .home .box .content {
   width: 50%;
+  text-align: center;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 .home .box .content span {
+  width: 100%;
   font-size: 4rem;
-  color: var(--navbar);
+  color: var(--btn);
 }
 .home .box .content h3 {
+  width: 100%;
   font-size: 6rem;
-  color: var(--navbar);
+  color: var(--btn);
   padding-top: .5rem;
   text-transform: uppercase;
 }
 .home .box .content p {
+  width: 100%;
   line-height: 2;
   color: var(--btn);
   font-size: 1.5rem;
