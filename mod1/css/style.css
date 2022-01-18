@@ -64,6 +64,9 @@ section {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  height: auto;
+  background: #44bb6a;
   padding: 2rem 9%;
   z-index: 1000;
   display: -webkit-box;
