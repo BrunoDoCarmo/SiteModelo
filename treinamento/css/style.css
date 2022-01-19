@@ -19,13 +19,14 @@ html {
   scroll-padding-top: 5rem;
 }
 html::-webkit-scrollbar {
-  width: 1rem;
+  width: 0.75rem;
 }
 html::-webkit-scrollbar-track {
-  background: #fff;
+	background: #fff;
 }
 html::-webkit-scrollbar-thumb {
-  background: #10221b;
+	border-radius: .5rem;
+  background: #219150;
 }
 section {
   padding: 5rem 9%;
@@ -249,7 +250,7 @@ section {
 	.header .icons .social {
 		position: relative;
 		bottom: 0;
-		padding: 0 4%;
+		padding: 0 3%;
 	}
 	.header .icons .social a {
 		font-size: 3rem;
