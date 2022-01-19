@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300&display=swap");
+:root {
+  --navbar-bk: #F5F5F5;
+  --border-color: #D1D1D1;
+  --color-search: #A9A9A9;
+  --black1: #000;
+  --black2: #c6c6c6;
+  --black3: #eee;
+  --white: #FFF;
+  --bk-search-btn: #383838;
+  --color-links: #383838;
+  --bk-product: #FFF;
+  --color-product: #FF7D7D;
+  --card-bk-color: #EFEFEF;
+  --bk-footer: #383838;
+}
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+html::-webkit-scrollbar {
+  width: 0.75rem;
+}
+html::-webkit-scrollbar-track {
+	background: var(--white);
+}
+html::-webkit-scrollbar-thumb {
+	border-radius: .5rem;
+  background: var(--black1);
+}
+section {
+  padding: 5rem 9%;
+}
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  border: 0.2rem solid var(--black1);
+  color: var(--black1);
+  cursor: pointer;
+  background: none;
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+}
+.btn:hover {
+  background: var(--black1);
+  color: var(--white);
+}
+.heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
+  color: var(--black1);
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--black1);
+}
+h6 {
+  color: var(--black3);
+}
