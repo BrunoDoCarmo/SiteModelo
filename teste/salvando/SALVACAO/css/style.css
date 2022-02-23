@@ -1,0 +1,47 @@
+:root {--black1: #000;--black2: #c6c6c6;--black3: #eee;--scrollbar-thumb: #1857bc;--btn: #287bff;--navbar: #1857bc;--color: #daac00;--background: #fcc302;--white: #fff;--home-background-image: url('../img/background-home.jpg');}body {margin: 0;padding: 0;display: flex;align-items: center;justify-content: center;min-height: 100vh;}
+input[type="checkbox"] {-webkit-appearance: none;visibility: hidden;display: none;}
+.check {
+	position: relative;
+	display: block;
+	width: 100px;
+	height: 50px;
+	background: var(--black1);
+	cursor: pointer;
+	border-radius: 25px;
+	overflow: hidden;
+	transition: ease-in 0.5s;
+}
+input[type="checkbox"]:checked ~ .check {
+	background: var(--white);
+	box-shadow: 0 0 0 1100px var(--black1);
+}
+.check:before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	background: var(--white);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	transition: 0.5s;
+}
+input[type="checkbox"]:checked ~ .check:before {
+	transform: translateX(-50px);
+}
+.check:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background: var(--black1);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	transition: 0.5s;
+	transform: translateX(50px);
+}
+input[type="checkbox"]:checked ~ .check:after {
+	transform: translateX(0);
+}
+.checkbox {position: absolute;width: 60px;height: 30px;border-radius: 25px;background: linear-gradient(0deg, var(--black2), var(--black3));}.checkbox .inner {position: absolute;top: 5px;left: 5px;right: 5px;bottom: 5px;background: linear-gradient(0deg, var(--black2), var(--black3));border-radius: 20px;box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);}.checkbox .inner .toggle {position: absolute;top: -1px;left: -1px;width: 22px;height: 22px;border-radius: 50%;background: var(--black3);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);box-sizing: border-box;border-top: 0.04em solid var(--black3);border-bottom: 0.04em solid var(--black3);transition: 0.5s;}.checkbox .inner.active .toggle {left: 28.5px;}.checkbox .inner.active {background: var(--btn);}
