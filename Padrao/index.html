@@ -6,9 +6,99 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
 		<link rel="stylesheet" href="css/style.css">
-		<title>Document</title>
+		<title>test</title>
+		<style>
+			.qr-code-generator {
+width: 500px;
+margin: 0 auto;
+}
+
+.qr-code-generator * {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+#qrcode {
+width: 128px;
+height: 128px;
+margin: 0 auto;
+text-align: center;
+}
+
+#qrcode a {
+font-size: 0.8em;
+}
+
+.qr-url, .qr-size {
+padding: 0.5em;
+border: 1px solid #ddd;
+border-radius: 2px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.qr-url {
+width: 79%;
+}
+
+.qr-size {
+width: 20%;
+}
+
+.generate-qr-code {
+display: block;
+width: 100%;
+margin: 0.5em 0 0;
+padding: 0.25em;
+font-size: 1.2em;
+border: none;
+cursor: pointer;
+background-color: #e5554e;
+color: #fff;
+}
+		</style>
 	</head>
 	<body>
+
+		<div class="qr-code-generator">
+
+			<input type="text" class="qr-url" placeholder="URL ou texto">
+			<input type="number" class="qr-size" value="128" min="20" max="500">
+			
+			<button class="generate-qr-code">Gerar QRCODE</button>
+			
+			<br>
+			
+			<div id="qrcode"></div>
+			
+			</div>
+
+
+
+
 		<script src="js/script.js"></script>
+		<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+		<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/qrcode.js'></script>
+
+		<script>
+			$('.generate-qr-code').on('click', function(){
+			// Clear Previous QR Code
+			$('#qrcode').empty();
+			// Set Size to Match User Input
+			$('#qrcode').css({
+				'width' : $('.qr-size').val(),
+				'height' : $('.qr-size').val()
+			})
+			// Generate and Output QR Code
+			if(!qrcode.text) {
+				$('#qrcode').qrcode({width: $('.qr-size').val(),height: $('.qr-size').val(),text: $('.qr-url').val()});
+			}
+			else {
+				return alert('Favor informar o valor!')
+			}
+			});
+		</script>
 	</body>
 </html>

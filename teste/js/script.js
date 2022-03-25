@@ -11,21 +11,21 @@ $(function () {
             $('.navbar-area').addClass('sticky')
         }
     })
-    $(document).ready(function () {
-        $('.venobox').venobox()
-    })
-    // ======= WOW JS =======
-    new WOW().init()
-    // ======= TINY SLIDE =======
-    var slider = tns({
-        container: '.testimonial-active',
-        items: 1,
-        slideBy: 'page',
-        autoplay: false,
-        mouseDrag: true,
-        nav: false,
-        controlsText: ['<i class="fas fa-angle-left prev"></i>', '<i class="fas fa-angle-right next"></i>'],
-    })
+    // $(document).ready(function () {
+    //     $('.venobox').venobox()
+    // })
+    // // ======= WOW JS =======
+    // new WOW().init()
+    // // ======= TINY SLIDE =======
+    // var slider = tns({
+    //     container: '.testimonial-active',
+    //     items: 1,
+    //     slideBy: 'page',
+    //     autoplay: false,
+    //     mouseDrag: true,
+    //     nav: false,
+    //     controlsText: ['<i class="fas fa-angle-left prev"></i>', '<i class="fas fa-angle-right next"></i>'],
+    // })
     // SCROLLIT JS
-    $.scrollIt()
+    // $.scrollIt()
 })
